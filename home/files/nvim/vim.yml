@@ -1,0 +1,12 @@
+---
+# selene standard library for this config (selene.toml: std = "vim").
+# Same shape as the vim.yml shipped by snacks.nvim / lazy.nvim, minus
+# lua_versions: mason's selene build lacks the luajit feature and would
+# print an ERROR line on every run.
+base: lua51
+
+globals:
+  vim:
+    any: true
+  Snacks:
+    any: true

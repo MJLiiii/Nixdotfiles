@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
+
+action="${1:-build}"
+if (( $# > 1 )); then
+  printf 'Usage: %s [build|switch|test|boot]\n' "$0" >&2
+  exit 2
+fi
+
+case "$action" in
+  build) exec nixos-rebuild build --flake .#ms02 ;;
+  switch|test|boot) exec nixos-rebuild "$action" --flake .#ms02 --sudo ;;
+  *) printf 'Usage: %s [build|switch|test|boot]\n' "$0" >&2; exit 2 ;;
+esac

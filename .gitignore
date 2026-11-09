@@ -1,0 +1,19 @@
+# Nix build results and local development files
+/result
+/result-*
+/.direnv/
+*.swp
+*.swo
+.DS_Store
+
+# Neovim keeps a machine-local plugin lockfile
+/home/files/nvim/lazy-lock.json
+
+# Local credentials do not belong in the Nix store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_ed25519
+id_rsa

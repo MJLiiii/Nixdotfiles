@@ -1,0 +1,6 @@
+# selene reads this only from its cwd or via --config; lua/plugins/lint.lua passes --config, so it
+# applies whatever directory Neovim was opened in.
+std = "vim" # vim.yml beside this file: lua51 plus the `vim` and `Snacks` globals
+
+[lints]
+mixed_table = "allow" # lazy.nvim specs mix list and record fields by design: { "<lhs>", rhs, desc = ... }

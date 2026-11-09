@@ -27,11 +27,13 @@ in
       gcc
       pkg-config
       xorg-server
+      nixfmt
+      nixd
     ])
     ++ [
       # Keep Numtide packages on their own pinned Nixpkgs for cache compatibility.
       agents.codex
-      agents.opencode
+      agents.opencode2
     ];
 
 }

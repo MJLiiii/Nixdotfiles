@@ -98,6 +98,20 @@ git push origin main
 To undo an applied generation, use `sudo nixos-rebuild switch --rollback`.
 Revert the corresponding source change with Git before the next rebuild.
 
+## Format Nix in VS Code
+
+The NixIDE extension (`jnoortheen.nix-ide`) runs in the VS Code Remote-SSH
+extension host. The workspace settings in `.vscode/settings.json` enable the
+`nixd` language server and format Nix files with `nixfmt` on save. `nixd` and
+`nixfmt` are installed by `modules/packages.nix`, so rebuild after changing that
+file.
+
+- Format the current file: `Shift+Alt+F` (or **Format Document** from the
+  Command Palette).
+- To disable format-on-save, remove `editor.formatOnSave` from the `[nix]`
+  section.
+- The editor and `nix fmt` both use `nixfmt`, so their output matches.
+
 ## Migration
 
 This repository was assembled from the working `/etc/nixos` configuration on

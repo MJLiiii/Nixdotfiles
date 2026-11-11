@@ -29,11 +29,27 @@ in
       xorg-server
       nixfmt
       nixd
+      ncurses
+      duckdb
+      iperf3
+      lazygit
+      llvm
+      lua
+      z3
+      cvc5
+      sqlite
+      postgresql
+      openjdk
+      pandoc
+      rocq-core
+      tree-sitter
+      yazi
     ])
     ++ [
       # Keep Numtide packages on their own pinned Nixpkgs for cache compatibility.
       agents.codex
       agents.opencode2
+      agents.claude-code
     ];
 
 }

@@ -57,12 +57,17 @@ in
     allowedTCPPorts = [ 22 ];
   };
 
+  environment.sessionVariables = {
+    COLORTERM = "truecolor";
+  };
+
   services.openssh = {
     enable = true;
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
+      AcceptEnv = [ "COLORTERM" "TERM" ];
     };
   };
 
